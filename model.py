@@ -14,8 +14,8 @@ PORAZ = "X"
 class Igra:
 
     def __init__(self, geslo, crke):
-        self.geslo = geslo  # String
-        self.crke = crke    # List
+        self.geslo = geslo.upper()              # String
+        self.crke = [i.upper() for i in crke]   # List
 
     def napacne_crke(self):
         return [i for i in self.crke if i not in self.geslo]
