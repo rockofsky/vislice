@@ -48,7 +48,7 @@ class Igra:
         nepravilni = ""
         for i in self.napacne_crke():
             nepravilni += i + " "
-        return nepravilni[:-1]
+        return nepravilni.strip()
 
     def ugibaj(self, crka):
         velika_crka = crka.upper()
