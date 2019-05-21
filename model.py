@@ -1,3 +1,5 @@
+import random
+
 # Definiramo konstante
 
 ŠTEVILO_DOVOLJENIH_NAPAK = 10
@@ -6,6 +8,7 @@ PRAVILNA_CRKA = "+"
 PONOVLJENA_CRKA = "o"
 NAPACNA_CRKA = "-"
 
+ZAČETEK = "S"
 ZMAGA = "W"
 PORAZ = "X" 
 
@@ -73,4 +76,25 @@ with open("besede.txt", "r", encoding="utf-8") as besede:
         bazen_besed.append(geslo.upper())
     
     
-        
+class Vislice():
+
+    def __init__(self):
+        # V slovarju igre ima vsaka igra svoj ID.
+        # ID je celo število.
+        self.igre = {}
+
+    def prost_id_igre(self):
+        if self.igre == {}:
+            return 0
+        else:
+            for i in range(len(self.igre) + 1):
+                if i not in self.igre:
+                    return i
+    
+    def nova_igra(self):    # Naredi novo igro z naključnim geslom
+        self.igre[self.prost_id_igre()] = (ZAČETEK, Igra(random.choice(bazen_besed), []))
+
+    def ugibaj(self, id_igre, crka):
+        igrica = self.igre[id_igre][1]
+        igre.update(id_igre, (igrica.ugibaj(crka), igrica))
+
