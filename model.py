@@ -78,7 +78,7 @@ with open("besede.txt", "r", encoding="utf-8") as besede:
     
 class Vislice():
 
-    def __init__(self):
+    def __init__(self, igre):
         # V slovarju igre ima vsaka igra svoj ID.
         # ID je celo število.
         self.igre = {}
