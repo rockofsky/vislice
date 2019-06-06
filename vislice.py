@@ -1,11 +1,14 @@
 import bottle
-from model import Igra, Vislice
+import model
 
-vislice = Vislice({})
+vislice = model.Vislice({})
 
 @bottle.get("/")
 def uvod():
     return bottle.template("index.tpl")
+
+@bottle.get("/igra/")
+def nova_igra()
 
 
 bottle.run(reloader=True, debug=True)
